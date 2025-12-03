@@ -1,0 +1,116 @@
+================================================================================
+WORKFLOW: Migrate Customer Data from Odoo v15 to v18
+================================================================================
+
+📋 BASIC INFORMATION
+------------------------------
+ID: 5029
+Name: Migrate Customer Data from Odoo v15 to v18
+Total Views: 20
+Created At: 2025-06-18T17:24:43.443Z
+Purchase URL: https://evozard.gumroad.com/l/migratecustomersv15tov18
+
+👤 AUTHOR INFORMATION
+------------------------------
+Name: Evozard
+Username: evozardconsulting
+Verified: ✅ Yes
+Bio: 🚀 AI & Automation Expert | n8n Creator
+
+I specialize in building AI-powered automation and workflow solutions using n8n and no-code/low-code tools. With extensive experience in process automation, system integration, and AI-driven workflows, I help businesses streamline operations, enhance productivity, and reduce manual effort. Passionate about scalable automation that drives efficiency and growth.
+Links: https://www.evozard.com/business-workflow-and-automation
+
+📝 DESCRIPTION
+------------------------------
+📄 Description:
+This workflow helps you migrate customer records directly from Odoo v15 to Odoo v18 without the need for manual exports or intermediate files.
+
+🔹 It connects to your v15 instance, retrieves customer (res.partner) records, and pushes them directly into your v18 database.
+🔹 The workflow uses pagination (SplitInBatches) for efficient handling of large datasets.
+🔹 Ideal for teams upgrading their Odoo infrastructure and looking to automate data replication between environments.
+
+⚡️ Note: Country and state ID mapping is excluded in this version for faster migration. If needed, logic can be added to map based on name lookup.
+
+🛠 Setup Instructions:
+Configure Odoo API credentials for both v15 and v18. (https://docs.n8n.io/integrations/builtin/credentials/odoo/)
+Adjust domain filters in the “Get Customers” node if needed.
+Run the workflow to begin real-time customer syncing.
+
+📌 Compatibility:
+Works with Odoo Community & Enterprise
+Tested on n8n v1.17+
+Requires access to Odoo’s JSON-RPC API
+
+🔧 NODES USED
+------------------------------
+• Odoo - Categories: Data & Storage
+
+Total Nodes: 1
+
+📊 RAW DATA (JSON)
+------------------------------
+{
+  "id": 5029,
+  "name": "Migrate Customer Data from Odoo v15 to v18",
+  "totalViews": 20,
+  "price": 20,
+  "purchaseUrl": "https://evozard.gumroad.com/l/migratecustomersv15tov18",
+  "user": {
+    "id": 93455,
+    "name": "Evozard",
+    "username": "evozardconsulting",
+    "bio": "🚀 AI & Automation Expert | n8n Creator\n\nI specialize in building AI-powered automation and workflow solutions using n8n and no-code/low-code tools. With extensive experience in process automation, system integration, and AI-driven workflows, I help businesses streamline operations, enhance productivity, and reduce manual effort. Passionate about scalable automation that drives efficiency and growth.",
+    "verified": true,
+    "links": "[\"https://www.evozard.com/business-workflow-and-automation\"]",
+    "avatar": "https://gravatar.com/avatar/c74b93180318a4ab4566d518d50ed5f006499d46e6b129f70c093a51978ad41e?r=pg&d=retro&size=200"
+  },
+  "description": "📄 Description:\nThis workflow helps you migrate customer records directly from Odoo v15 to Odoo v18 without the need for manual exports or intermediate files.\n\n🔹 It connects to your v15 instance, retrieves customer (res.partner) records, and pushes them directly into your v18 database.\n🔹 The workflow uses pagination (SplitInBatches) for efficient handling of large datasets.\n🔹 Ideal for teams upgrading their Odoo infrastructure and looking to automate data replication between environments.\n\n⚡️ Note: Country and state ID mapping is excluded in this version for faster migration. If needed, logic can be added to map based on name lookup.\n\n🛠 Setup Instructions:\nConfigure Odoo API credentials for both v15 and v18. (https://docs.n8n.io/integrations/builtin/credentials/odoo/)\nAdjust domain filters in the “Get Customers” node if needed.\nRun the workflow to begin real-time customer syncing.\n\n📌 Compatibility:\nWorks with Odoo Community & Enterprise\nTested on n8n v1.17+\nRequires access to Odoo’s JSON-RPC API\n",
+  "createdAt": "2025-06-18T17:24:43.443Z",
+  "nodes": [
+    {
+      "id": 559,
+      "icon": "file:odoo.svg",
+      "name": "n8n-nodes-base.odoo",
+      "codex": {
+        "data": {
+          "alias": [
+            "ERP"
+          ],
+          "resources": {
+            "primaryDocumentation": [
+              {
+                "url": "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.odoo/"
+              }
+            ],
+            "credentialDocumentation": [
+              {
+                "url": "https://docs.n8n.io/integrations/builtin/credentials/odoo/"
+              }
+            ]
+          },
+          "categories": [
+            "Data & Storage"
+          ],
+          "nodeVersion": "1.0",
+          "codexVersion": "1.0"
+        }
+      },
+      "group": "[\"transform\"]",
+      "defaults": {
+        "name": "Odoo"
+      },
+      "iconData": {
+        "type": "file",
+        "fileBuffer": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNTAiIGhlaWdodD0iMTUwIj48Y2lyY2xlIGN4PSI3NSIgY3k9Ijc1IiByPSI3Mi40IiBmaWxsPSIjOWM1Nzg5Ii8+PGNpcmNsZSBjeD0iNzUiIGN5PSI3NSIgcj0iNDIuNyIgZmlsbD0iI2ZmZiIvPjwvc3ZnPg=="
+      },
+      "displayName": "Odoo",
+      "typeVersion": 1,
+      "nodeCategories": [
+        {
+          "id": 3,
+          "name": "Data & Storage"
+        }
+      ]
+    }
+  ]
+}
